@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>طبخة ميرا - حيث تلتقي النكهة بالأناقة</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+<style>
+.fade-in {
+opacity: 0;
+animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.about-image {
+transition: transform 0.3s ease;
+}
+.about-image:hover {
+transform: scale(1.05);
+}
+body {
+opacity: 0;
+animation: pageLoad 1s ease-in forwards;
+}
+@keyframes pageLoad {
+from { opacity: 0; }
+to { opacity: 1; }
+}
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Tajawal', sans-serif;
+}
+.hero-section {
+background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://th.bing.com/th/id/OIP.q--Y18sMiKKLFu8AaGFVQwHaE5?rs=1&pid=ImgDetMain');
+background-size: cover;
+background-position: center;
+}
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #4F46E5;
+}
+.dish-card:hover {
+transform: translateY(-5px);
+transition: all 0.3s ease;
+}
+.dish-card img {
+transition: all 0.5s ease;
+}
+.dish-card:hover img {
+transform: scale(1.05);
+}
+</style>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4F46E5',secondary:'#8B5CF6'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+<!-- Top Navigation -->
+<nav class="bg-white shadow-sm py-4 px-6 sticky top-0 z-50">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center space-x-6 space-x-reverse">
+<a href="#" class="text-gray-700 hover:text-primary transition">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-home-line text-xl"></i>
+</div>
+</a>
+</div>
+<a href="#" class="font-['Pacifico'] text-primary text-3xl">طبخة ميرا</a>
+<div class="flex items-center space-x-6 space-x-reverse">
+<a href="#contact" class="text-gray-700 hover:text-primary transition">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-phone-line text-xl"></i>
+</div>
+</a>
+<a href="#" class="text-gray-700 hover:text-primary transition relative">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-shopping-cart-2-line text-xl"></i>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">3</span>
+</div>
+</a>
+<a href="#" class="text-gray-700 hover:text-primary transition">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-user-line text-xl"></i>
+</div>
+</a>
+</div>
+</div>
+</nav>
+<!-- Main Navigation -->
+<div class="bg-white shadow-sm mb-1">
+<div class="max-w-7xl mx-auto">
+<ul class="flex justify-center space-x-8 space-x-reverse py-4">
+<li><a href="#" class="text-primary font-medium hover:text-primary-dark transition">الرئيسية</a></li>
+<li><a href="#menu" class="text-gray-700 font-medium hover:text-primary transition">القائمة</a></li>
+<li><a href="#features" class="text-gray-700 font-medium hover:text-primary transition">مميزاتنا</a></li>
+<li><a href="#py-16" class="text-gray-700 font-medium hover:text-primary transition"> الوصفات</a></li>
+<li><a href="#contact" class="text-gray-700 font-medium hover:text-primary transition">تواصل معنا</a></li>
+</ul>
+</div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section py-32 text-white fade-in">
+<div class="max-w-7xl mx-auto px-6 w-full">
+<div class="max-w-2xl">
+<h1 class="text-5xl font-bold mb-4">مرحباً بكم في طبخة ميرا</h1>
+<p class="text-xl mb-8">حيث تلتقي النكهة بالأناقة</p>
+<p class="text-lg mb-8 opacity-90">استمتع بتجربة طعام فاخرة لم يسبق لها مثيل في طبخة ميرة، وجهتك المثالية لأطباق منزلية فاخرة بلمسة عصرية.</p>
+<div class="flex space-x-4 space-x-reverse">
+<a href="#menu" class="bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-button font-medium transition whitespace-nowrap">تصفح القائمة</a>
+<a href="#contact" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white border border-white/30 px-6 py-3 rounded-button font-medium transition whitespace-nowrap">تواصل معنا</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('https://readdy.ai/api/search-image?query=luxury%20restaurant%20interior%20with%20soft%20ambient%20lighting%2C%20elegant%20middle%20eastern%20decor%20elements%2C%20marble%20surfaces%2C%20golden%20accents%2C%20and%20intricate%20patterns%2C%20professional%20architectural%20photography&width=1920&height=1080&seq=about_bg&orientation=landscape'); filter: brightness(0.1);"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-primary/40 mix-blend-overlay"></div>
+<div class="max-w-7xl mx-auto px-6 relative">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-2 lg:order-1 text-white" data-aos="fade-right">
+<h2 class="text-4xl font-bold mb-6 relative">
+<span class="block text-primary/20 text-6xl absolute -top-8 -right-2">About</span>
+قصة طبخة ميرا
+</h2>
+<p class="text-white/90 mb-6 leading-relaxed text-lg" data-aos="fade-up" data-aos-delay="100">منذ عام 2015، بدأت رحلتنا في تقديم تجربة طعام فريدة تجمع بين الأصالة والابتكار. في طبخة ميرا، نؤمن بأن الطعام ليس مجرد وجبة، بل هو تجربة متكاملة تجمع بين النكهات الأصيلة والتقديم الراقي.</p>
+<div class="space-y-6 mb-8">
+<div class="flex items-center space-x-4 space-x-reverse transform hover:translate-x-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+<div class="w-16 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+<i class="ri-award-line text-white text-2xl"></i>
+</div>
+<div>
+<h4 class="font-bold text-white text-xl">جودة لا تضاهى</h4>
+<p class="text-white/80">نختار أجود المكونات الطازجة يومياً</p>
+</div>
+</div>
+<div class="flex items-center space-x-4 space-x-reverse transform hover:translate-x-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+<div class="w-16 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+<i class="ri-heart-line text-white text-2xl"></i>
+</div>
+<div>
+<h4 class="font-bold text-white text-xl">صنع بحب</h4>
+<p class="text-white/80">كل طبق يحمل لمسة خاصة من مطبخنا</p>
+</div>
+</div>
+<div class="flex items-center space-x-4 space-x-reverse transform hover:translate-x-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
+<div class="w-16 h-16 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+<i class="ri-shield-star-line text-white text-2xl"></i>
+</div>
+<div>
+<h4 class="font-bold text-white text-xl">معايير عالمية</h4>
+<p class="text-white/80">نلتزم بأعلى معايير الجودة والنظافة</p>
+</div>
+</div>
+</div>
+<div class="flex space-x-4 space-x-reverse" data-aos="fade-up" data-aos-delay="500">
+<a href="#menu" class="bg-white hover:bg-white/90 text-primary px-6 py-3 rounded-button font-medium transition whitespace-nowrap group">
+<span class="group-hover:mr-2 transition-all">اكتشف قائمتنا</span>
+<i class="ri-arrow-left-line opacity-0 group-hover:opacity-100 transition-all"></i>
+</a>
+<a href="#contact" class="bg-transparent border border-white text-white hover:bg-white hover:text-primary px-6 py-3 rounded-button font-medium transition whitespace-nowrap">تواصل معنا</a>
+</div>
+</div>
+<div class="order-1 lg:order-2 grid grid-cols-2 gap-4 relative" data-aos="fade-left">
+<div class="absolute -inset-4 bg-white/5 backdrop-blur-sm rounded-lg -z-10"></div>
+<div class="about-image rounded-lg overflow-hidden group">
+<img src="https://scontent.fcai20-5.fna.fbcdn.net/v/t39.30808-6/473593140_990057399850737_1745242740366516357_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=lxsa_yLezlAQ7kNvwEgNTaL&_nc_oc=AdlaGk29JAVJehxyrv3QlLxbIKdaA1y9k_yoS8ctHKE-koG0ztSqHZCdXGVzppQRe94&_nc_zt=23&_nc_ht=scontent.fcai20-5.fna&_nc_gid=VPF3z6Z9j99xy7i-GVRJYg&oh=00_AfKCdsNZot986u-Q7CLDbNu--x8BvKgbLzdNRyHn9EfmFg&oe=6845E37F" alt="الطهي بحرفية" class="w-full h-full object-cover">
+</div>
+<div class="about-image rounded-lg overflow-hidden mt-8">
+<img src="https://th.bing.com/th/id/OIP.L50e33ZwZld78rJpmeMVoQHaHb?pid=ImgDet&w=474&h=475&rs=1" alt="تقديم مميز" class="w-full h-full object-cover">
+</div>
+<div class="about-image rounded-lg overflow-hidden">
+<img src="https://th.bing.com/th/id/OIP.Yvp6rOviyPTcyEau7kxNxQHaJ9?pid=ImgDet&w=474&h=637&rs=1" alt="أجواء راقية" class="w-full h-full object-cover">
+</div>
+<div class="about-image rounded-lg overflow-hidden mt-8">
+<img src="https://th.bing.com/th/id/OIP.n70QyGp1WHk-NMl6plbqGAHaJ8?pid=ImgDet&w=474&h=636&rs=1" alt="مكونات فاخرة" class="w-full h-full object-cover">
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Dishes Section -->
+<section id="menu" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">أطباقنا المميزة</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">استمتع بمجموعة مختارة من أشهى الأطباق المنزلية الفاخرة المعدة بعناية فائقة لإرضاء ذوقك</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Dish 1 -->
+<div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20mansaf%20dish%20with%20tender%20lamb%2C%20turmeric%20rice%2C%20yogurt%20sauce%20and%20pine%20nuts%2C%20traditional%20Middle%20Eastern%20cuisine%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20white%20plate%20on%20dark%20wooden%20table%2C%20restaurant%20quality%20presentation&width=600&height=400&seq=dish1&orientation=landscape" alt="منسف لحم" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="text-xl font-bold">منسف لحم فاخر</h3>
+<span class="text-primary font-bold">89 ريال</span>
+</div>
+<p class="text-gray-600 mb-4">لحم ضأن طري مطهو ببطء مع الأرز المبهر والصنوبر واللوز المحمص وصلصة اللبن الغنية</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button font-medium transition flex items-center justify-center whitespace-nowrap">
+<i class="ri-shopping-cart-add-line ml-2"></i>
+أضف إلى السلة
+</button>
+</div>
+</div>
+<!-- Dish 2 -->
+<div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+<div class="h-64 overflow-hidden">
+<img src="https://scontent.fcai20-3.fna.fbcdn.net/v/t39.30808-6/495245230_1090086066514536_4392167346137181625_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=V1xRoPADFTsQ7kNvwGT3sAo&_nc_oc=AdnyHUegAPCzHn3IMx8slLdmTS8BGnRNJ7AlOGkk67N24IDqQZKY_hqJUKPU35zOdyE&_nc_zt=23&_nc_ht=scontent.fcai20-3.fna&_nc_gid=0PYZHipjN-y3vCyWm3PAbg&oh=00_AfKQvYe8goXjF0xppJrxhYnrr59h5ItZiV5lqobHu04qMg&oe=6845B993" alt="مشاوي مشكلة" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="text-xl font-bold">مشاوي مشكلة</h3>
+<span class="text-primary font-bold">125 ريال</span>
+</div>
+<p class="text-gray-600 mb-4">تشكيلة فاخرة من المشاوي تشمل شيش طاووق، كفتة، ريش غنم وكباب لحم مع أرز بالزعفران وخضار مشوية</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button font-medium transition flex items-center justify-center whitespace-nowrap">
+<i class="ri-shopping-cart-add-line ml-2"></i>
+أضف إلى السلة
+</button>
+</div>
+</div>
+<!-- Dish 3 -->
+<div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20stuffed%20grape%20leaves%20%28warak%20enab%29%20with%20rice%20and%20minced%20meat%20filling%2C%20garnished%20with%20lemon%20slices%20and%20fresh%20herbs%2C%20served%20with%20yogurt%20sauce%2C%20Middle%20Eastern%20cuisine%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20restaurant%20quality%20presentation&width=600&height=400&seq=dish3&orientation=landscape" alt="ورق عنب" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="text-xl font-bold">ورق عنب محشي</h3>
+<span class="text-primary font-bold">65 ريال</span>
+</div>
+<p class="text-gray-600 mb-4">ورق عنب محشي بالأرز واللحم المفروم والأعشاب الطازجة، يقدم مع صلصة الطماطم واللبن</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button font-medium transition flex items-center justify-center whitespace-nowrap">
+<i class="ri-shopping-cart-add-line ml-2"></i>
+أضف إلى السلة
+</button>
+</div>
+</div>
+<!-- Dish 4 -->
+<div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20mezzeh%20platter%20with%20hummus%2C%20moutabal%2C%20tabbouleh%2C%20fattoush%2C%20falafel%20and%20freshly%20baked%20bread%2C%20traditional%20Middle%20Eastern%20appetizers%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20restaurant%20quality%20presentation&width=600&height=400&seq=dish4&orientation=landscape" alt="مقبلات" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="text-xl font-bold">طبق مقبلات عربية</h3>
+<span class="text-primary font-bold">78 ريال</span>
+</div>
+<p class="text-gray-600 mb-4">تشكيلة فاخرة من المقبلات تشمل حمص، متبل، تبولة، فتوش، فلافل مع خبز طازج</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button font-medium transition flex items-center justify-center whitespace-nowrap">
+<i class="ri-shopping-cart-add-line ml-2"></i>
+أضف إلى السلة
+</button>
+</div>
+</div>
+<!-- Dish 5 -->
+<div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20seafood%20platter%20with%20grilled%20fish%2C%20jumbo%20shrimp%2C%20calamari%20and%20mussels%2C%20served%20with%20saffron%20rice%20and%20tahini%20sauce%2C%20Middle%20Eastern%20seafood%20cuisine%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20restaurant%20quality%20presentation&width=600&height=400&seq=dish5&orientation=landscape" alt="مأكولات بحرية" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="text-xl font-bold">طبق مأكولات بحرية</h3>
+<span class="text-primary font-bold">145 ريال</span>
+</div>
+<p class="text-gray-600 mb-4">تشكيلة فاخرة من المأكولات البحرية تشمل سمك مشوي، روبيان جامبو، كاليماري وبلح البحر مع أرز بالزعفران</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button font-medium transition flex items-center justify-center whitespace-nowrap">
+<i class="ri-shopping-cart-add-line ml-2"></i>
+أضف إلى السلة
+</button>
+</div>
+</div>
+<!-- Dish 6 -->
+<div class="dish-card bg-white rounded-lg shadow-md overflow-hidden transition-all">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=elegant%20kunafa%20dessert%20with%20cheese%20filling%2C%20drizzled%20with%20sugar%20syrup%20and%20topped%20with%20crushed%20pistachios%2C%20traditional%20Middle%20Eastern%20sweet%2C%20professional%20food%20photography%20with%20soft%20lighting%2C%20restaurant%20quality%20presentation&width=600&height=400&seq=dish6&orientation=landscape" alt="كنافة" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="text-xl font-bold">كنافة نابلسية</h3>
+<span class="text-primary font-bold">55 ريال</span>
+</div>
+<p class="text-gray-600 mb-4">كنافة طازجة محشوة بالجبن ومغطاة بالقطر وفستق حلبي مطحون، تقدم ساخنة</p>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-button font-medium transition flex items-center justify-center whitespace-nowrap">
+<i class="ri-shopping-cart-add-line ml-2"></i>
+أضف إلى السلة
+</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="menu.html" class="inline-block bg-white border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-button font-medium transition whitespace-nowrap">عرض القائمة كاملة</a>
+</div>
+</div>
+</section>
+<!-- Menu Section -->
+<section class="py-16">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-4">قائمة الطعام</h2>
+<p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">اكتشف تشكيلتنا المتنوعة من الأطباق العربية الأصيلة المحضرة بعناية فائقة باستخدام أجود أنواع المكونات الطازجة</p>
+<!-- Menu Tabs -->
+<div class="flex justify-center mb-12">
+<div class="inline-flex bg-gray-100 p-1 rounded-full">
+<button class="px-6 py-2 rounded-full bg-primary text-white font-medium whitespace-nowrap">المقبلات</button>
+<button class="px-6 py-2 rounded-full text-gray-700 hover:bg-gray-200 transition whitespace-nowrap">الأطباق الرئيسية</button>
+<button class="px-6 py-2 rounded-full text-gray-700 hover:bg-gray-200 transition whitespace-nowrap">المشروبات</button>
+<button class="px-6 py-2 rounded-full text-gray-700 hover:bg-gray-200 transition whitespace-nowrap">الحلويات</button>
+</div>
+</div>
+<!-- Menu Items -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Menu Item 1 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20close-up%20of%20creamy%20hummus%20topped%20with%20olive%20oil%2C%20paprika%2C%20and%20fresh%20parsley.%20The%20hummus%20is%20served%20in%20a%20traditional%20ceramic%20bowl%20with%20a%20swirl%20pattern%20on%20top%20and%20pine%20nuts%20scattered%20around.%20The%20lighting%20is%20bright%20and%20clean%2C%20highlighting%20the%20smooth%20texture%20of%20the%20hummus%20against%20a%20neutral%20background%20with%20some%20pita%20bread%20visible%20on%20the%20side.&width=400&height=300&seq=hummus&orientation=landscape" alt="حمص" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-800 mb-1">حمص بطحينة</h3>
+<p class="text-gray-600 text-sm">حمص مهروس مع طحينة وزيت زيتون وليمون</p>
+</div>
+<span class="text-primary font-bold">25 ريال</span>
+</div>
+<div class="mb-6">
+<h4 class="text-sm font-bold text-gray-700 mb-2">المكونات:</h4>
+<p class="text-gray-600 text-sm">حمص، طحينة، زيت زيتون، ليمون، ثوم، كمون، بقدونس</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2 space-x-reverse">
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-leaf-line text-green-600"></i>
+</div>
+<span class="text-sm text-gray-600">نباتي</span>
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-fire-line text-orange-500"></i>
+</div>
+<span class="text-sm text-gray-600">220 سعرة</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">
+أضف للسلة
+</button>
+</div>
+</div>
+</div>
+<!-- Menu Item 2 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20colorful%20tabbouleh%20salad%20made%20with%20finely%20chopped%20parsley%2C%20mint%2C%20tomatoes%2C%20bulgur%2C%20and%20onions%2C%20dressed%20with%20olive%20oil%20and%20lemon%20juice.%20The%20salad%20is%20served%20in%20a%20traditional%20ceramic%20bowl%20with%20a%20decorative%20rim.%20The%20lighting%20is%20bright%20and%20clean%2C%20highlighting%20the%20vibrant%20green%20color%20and%20fresh%20ingredients%20against%20a%20neutral%20background%20with%20some%20pita%20bread%20visible%20on%20the%20side.&width=400&height=300&seq=tabbouleh&orientation=landscape" alt="تبولة" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-800 mb-1">تبولة</h3>
+<p class="text-gray-600 text-sm">سلطة البقدونس المفروم مع البرغل والطماطم والبصل</p>
+</div>
+<span class="text-primary font-bold">30 ريال</span>
+</div>
+<div class="mb-6">
+<h4 class="text-sm font-bold text-gray-700 mb-2">المكونات:</h4>
+<p class="text-gray-600 text-sm">بقدونس، برغل، طماطم، بصل أخضر، نعناع، ليمون، زيت زيتون</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2 space-x-reverse">
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-leaf-line text-green-600"></i>
+</div>
+<span class="text-sm text-gray-600">نباتي</span>
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-fire-line text-orange-500"></i>
+</div>
+<span class="text-sm text-gray-600">180 سعرة</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">
+أضف للسلة
+</button>
+</div>
+</div>
+</div>
+<!-- Menu Item 3 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 overflow-hidden">
+<img src="https://th.bing.com/th/id/OIP.n70QyGp1WHk-NMl6plbqGAHaJ8?pid=ImgDet&w=474&h=636&rs=1" alt="فلافل" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-800 mb-1">فلافل</h3>
+<p class="text-gray-600 text-sm">كرات الحمص المقلية مع صلصة الطحينة</p>
+</div>
+<span class="text-primary font-bold">28 ريال</span>
+</div>
+<div class="mb-6">
+<h4 class="text-sm font-bold text-gray-700 mb-2">المكونات:</h4>
+<p class="text-gray-600 text-sm">حمص، بقدونس، كزبرة، بصل، ثوم، كمون، كزبرة مطحونة، طحينة</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2 space-x-reverse">
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-leaf-line text-green-600"></i>
+</div>
+<span class="text-sm text-gray-600">نباتي</span>
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-fire-line text-orange-500"></i>
+</div>
+<span class="text-sm text-gray-600">320 سعرة</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">
+أضف للسلة
+</button>
+</div>
+</div>
+</div>
+<!-- Menu Item 4 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20plate%20of%20smoky%20baba%20ganoush%20%28roasted%20eggplant%20dip%29%20topped%20with%20olive%20oil%2C%20pomegranate%20seeds%2C%20and%20fresh%20herbs.%20The%20dip%20has%20a%20creamy%20texture%20with%20visible%20bits%20of%20roasted%20eggplant%20and%20is%20served%20in%20a%20shallow%20decorative%20bowl.%20The%20lighting%20is%20bright%20and%20clean%2C%20highlighting%20the%20rich%20color%20and%20texture%20of%20the%20dip%20against%20a%20neutral%20background%20with%20some%20warm%20pita%20bread%20visible%20on%20the%20side.&width=400&height=300&seq=babaganoush&orientation=landscape" alt="بابا غنوج" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-800 mb-1">بابا غنوج</h3>
+<p class="text-gray-600 text-sm">باذنجان مشوي مهروس مع طحينة وزيت زيتون</p>
+</div>
+<span class="text-primary font-bold">26 ريال</span>
+</div>
+<div class="mb-6">
+<h4 class="text-sm font-bold text-gray-700 mb-2">المكونات:</h4>
+<p class="text-gray-600 text-sm">باذنجان، طحينة، ثوم، ليمون، زيت زيتون، بقدونس</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2 space-x-reverse">
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-leaf-line text-green-600"></i>
+</div>
+<span class="text-sm text-gray-600">نباتي</span>
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-fire-line text-orange-500"></i>
+</div>
+<span class="text-sm text-gray-600">240 سعرة</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">
+أضف للسلة
+</button>
+</div>
+</div>
+</div>
+<!-- Menu Item 5 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20plate%20of%20stuffed%20grape%20leaves%20%28dolma%2Fwarak%20enab%29%20arranged%20in%20a%20neat%20row%20with%20lemon%20wedges%20and%20yogurt%20sauce%20on%20the%20side.%20The%20stuffed%20leaves%20are%20tightly%20rolled%20and%20glistening%20with%20olive%20oil.%20The%20dish%20is%20served%20on%20an%20ornate%20ceramic%20plate%20with%20traditional%20patterns.%20The%20lighting%20is%20bright%20and%20clean%2C%20highlighting%20the%20green%20color%20of%20the%20grape%20leaves%20against%20a%20neutral%20background.&width=400&height=300&seq=grapeleaves&orientation=landscape" alt="ورق عنب" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-800 mb-1">ورق عنب</h3>
+<p class="text-gray-600 text-sm">أوراق العنب المحشوة بالأرز والخضار</p>
+</div>
+<span class="text-primary font-bold">35 ريال</span>
+</div>
+<div class="mb-6">
+<h4 class="text-sm font-bold text-gray-700 mb-2">المكونات:</h4>
+<p class="text-gray-600 text-sm">ورق عنب، أرز، بقدونس، نعناع، طماطم، بصل، ليمون، زيت زيتون</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2 space-x-reverse">
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-leaf-line text-green-600"></i>
+</div>
+<span class="text-sm text-gray-600">نباتي</span>
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-fire-line text-orange-500"></i>
+</div>
+<span class="text-sm text-gray-600">280 سعرة</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">
+أضف للسلة
+</button>
+</div>
+</div>
+</div>
+<!-- Menu Item 6 -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-56 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=A%20plate%20of%20fattoush%20salad%20with%20crispy%20pita%20bread%20pieces%2C%20fresh%20vegetables%20including%20tomatoes%2C%20cucumbers%2C%20radishes%2C%20and%20lettuce%2C%20topped%20with%20sumac%20and%20pomegranate%20seeds.%20The%20salad%20is%20dressed%20with%20olive%20oil%20and%20lemon%20juice%20and%20served%20in%20a%20wide%20decorative%20bowl.%20The%20lighting%20is%20bright%20and%20clean%2C%20highlighting%20the%20vibrant%20colors%20of%20the%20vegetables%20against%20a%20neutral%20background.&width=400&height=300&seq=fattoush&orientation=landscape" alt="فتوش" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-gray-800 mb-1">فتوش</h3>
+<p class="text-gray-600 text-sm">سلطة الخضار مع قطع الخبز المحمص والسماق</p>
+</div>
+<span class="text-primary font-bold">32 ريال</span>
+</div>
+<div class="mb-6">
+<h4 class="text-sm font-bold text-gray-700 mb-2">المكونات:</h4>
+<p class="text-gray-600 text-sm">خس، خيار، طماطم، فلفل أخضر، بصل، فجل، خبز محمص، سماق، نعناع</p>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2 space-x-reverse">
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full">
+<i class="ri-leaf-line text-green-600"></i>
+</div>
+<span class="text-sm text-gray-600">نباتي</span>
+<div class="w-6 h-6 flex items-center justify-center bg-gray-100 rounded-full mr-3">
+<i class="ri-fire-line text-orange-500"></i>
+</div>
+<span class="text-sm text-gray-600">210 سعرة</span>
+</div>
+<button class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-opacity-90 transition whitespace-nowrap">
+أضف للسلة
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-white border border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:text-white transition whitespace-nowrap">
+عرض المزيد
+</button>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section id="features" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">لماذا طبخة ميرا؟</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">نقدم لك تجربة طعام استثنائية تجمع بين الأصالة والحداثة مع خدمة لا مثيل لها</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="feature-card bg-white p-8 rounded-lg shadow-md text-center transition-all">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-restaurant-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">أطباق منزلية فاخرة</h3>
+<p class="text-gray-600">نقدم أطباقًا منزلية تقليدية بلمسة عصرية فاخرة، معدة بأجود المكونات الطازجة وبأيدي طهاة محترفين</p>
+</div>
+<!-- Feature 2 -->
+<div class="feature-card bg-white p-8 rounded-lg shadow-md text-center transition-all">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-time-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">توصيل سريع</h3>
+<p class="text-gray-600">نضمن وصول طلبك في الوقت المحدد وبحالة ممتازة، مع إمكانية تتبع الطلب لحظة بلحظة</p>
+</div>
+<!-- Feature 3 -->
+<div class="feature-card bg-white p-8 rounded-lg shadow-md text-center transition-all">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-3">خدمة عملاء متميزة</h3>
+<p class="text-gray-600">فريق خدمة العملاء لدينا متاح على مدار الساعة للإجابة على استفساراتك وتلبية طلباتك الخاصة</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4" data-aos="fade-up">لحظات مميزة من مطبخنا</h2>
+<p class="text-gray-600 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">شاهد أجواء مطعمنا الراقية ولحظات إعداد أشهى الأطباق</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="relative overflow-hidden rounded-lg group" data-aos="zoom-in">
+<img src="https://www.bing.com/th/id/OIP.8Smei3r2X3bcOIjJhuTxOQHaE8?w=285&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="أجواء المطعم" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+<div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="text-white text-lg font-bold">أجواء راقية</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg group" data-aos="zoom-in" data-aos-delay="100">
+<img src="https://scontent.fcai20-1.fna.fbcdn.net/v/t39.30808-6/495955316_1090085729847903_5992930997645124144_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=lod53wZAHogQ7kNvwER0-Cl&_nc_oc=AdktTK3engj15I7YzxjcRY-BwyfDM9sNp6J6bvmDr0Fe66-2xwrjChuj_VL1lvvBTng&_nc_zt=23&_nc_ht=scontent.fcai20-1.fna&_nc_gid=ygLgvip22H7fJGOMFdV46A&oh=00_AfKt2AkOBDVfe7nUlGWjr3kgoV9X5Ps0aNVZebMrhP9kQQ&oe=6845C74D" alt="لحظات الطهي" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+<div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="text-white text-lg font-bold">فن الطهي</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg group" data-aos="zoom-in" data-aos-delay="200">
+<img src="https://scontent.fcai20-5.fna.fbcdn.net/v/t39.30808-6/501033253_1090086786514464_3489889405892490659_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=kP1LEANALDUQ7kNvwEzRV9j&_nc_oc=AdmfP5DwTfF4K3dpnZv05jDxshoNJoNzU4fv0jAGf01VZlETKcyG9Sf4amLQis5jmN0&_nc_zt=23&_nc_ht=scontent.fcai20-5.fna&_nc_gid=PACP12ivd4atolXTUM-0Hg&oh=00_AfJJhOU-wBYLdh-nk_8YV4HJAqe_4TPXPkxvjwttob6xSw&oe=6845E129" alt="تقديم الطعام" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+<div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="text-white text-lg font-bold">Good Fodo</span>
+</div>
+</div>
+</div>
+<div class="text-center mt-16">
+<h3 class="text-2xl font-bold mb-6" data-aos="fade-up">تابعونا على مواقع التواصل الاجتماعي</h3>
+<div class="flex justify-center items-center space-x-6 space-x-reverse">
+<a href="https://www.facebook.com/tabakh.mira" class="social-icon group" data-aos="zoom-in" data-aos-delay="0">
+<div class="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform group-hover:scale-110 transition duration-300">
+<i class="ri-facebook-fill text-[#1877F2] text-2xl"></i>
+</div>
+</a>
+<a href="https://www.tiktok.com/@tabkhetmira90?is_from_webapp=1&sender_device=pc" class="social-icon group" data-aos="zoom-in" data-aos-delay="100">
+<div class="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform group-hover:scale-110 transition duration-300">
+<i class="ri-tiktok-fill text-black text-2xl"></i>
+</div>
+</a>
+<a href="https://www.youtube.com/channel/UCZlEDzISihDgd3EjXDZHciQ" class="social-icon group" data-aos="zoom-in" data-aos-delay="200">
+<div class="w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center transform group-hover:scale-110 transition duration-300">
+<i class="ri-youtube-fill text-[#FF0000] text-2xl"></i>
+</div>
+</a>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 relative overflow-hidden">
+<!-- [Previous about section content] -->
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4">تواصل معنا</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">نحن هنا للإجابة على جميع استفساراتك وتلبية طلباتك الخاصة</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Contact Form -->
+<div class="bg-white p-8 rounded-lg shadow-md">
+<h3 class="text-xl font-bold mb-6">أرسل لنا رسالة</h3>
+<form id="contactForm">
+<div class="mb-4">
+<label for="name" class="block text-gray-700 mb-2">الاسم الكامل</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="أدخل اسمك الكامل">
+</div>
+<div class="mb-4">
+<label for="email" class="block text-gray-700 mb-2">البريد الإلكتروني</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="أدخل بريدك الإلكتروني">
+</div>
+<div class="mb-4">
+<label for="phone" class="block text-gray-700 mb-2">رقم الهاتف</label>
+<input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="أدخل رقم هاتفك">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">رسالتك</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary" placeholder="اكتب رسالتك هنا..."></textarea>
+</div>
+<button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-6 rounded-button font-medium transition whitespace-nowrap">إرسال الرسالة</button>
+</form>
+</div>
+<!-- Contact Info & Map -->
+<div>
+<div class="bg-white p-8 rounded-lg shadow-md mb-8">
+<h3 class="text-xl font-bold mb-6">معلومات التواصل</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full ml-4">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">العنوان</h4>
+<p class="text-gray-600">  القاهر - Cairo  </p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full ml-4">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">رقم الهاتف</h4>
+<p class="text-gray-600">+201123961290</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full ml-4">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">البريد الإلكتروني</h4>
+<p class="text-gray-600">No</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full ml-4">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">ساعات العمل</h4>
+<p class="text-gray-600">علي مدار الايام وال 24 ساعه </p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<a href="tel:+201123961290" class="flex items-center justify-center bg-[#0088cc] hover:bg-[#0088cc]/90 text-white py-3 px-6 rounded-button font-medium transition whitespace-nowrap">
+<i class="ri-telegram-fill ml-2"></i>
+تواصل معنا عبر Call
+</a>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden h-64">
+<div class="h-full w-full bg-cover bg-center" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<!-- Logo & About -->
+<div class="md:col-span-1">
+<a href="#" class="font-['Pacifico'] text-white text-2xl mb-4 block">طبخة ميرا</a>
+<p class="text-gray-400 mb-6">حيث تلتقي النكهة بالأناقة. نقدم أشهى الأطباق المنزلية الفاخرة بلمسة عصرية.</p>
+<div class="flex space-x-4 space-x-reverse">
+<a href="#" class="text-gray-400 hover:text-white transition">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-facebook-fill"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-instagram-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-twitter-x-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-snapchat-line"></i>
+</div>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h4 class="text-lg font-bold mb-6">روابط سريعة</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition">الرئيسية</a></li>
+<li><a href="#menu" class="text-gray-400 hover:text-white transition">القائمة</a></li>
+<li><a href="#features" class="text-gray-400 hover:text-white transition">مميزاتنا</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">طلباتي</a></li>
+<li><a href="#contact" class="text-gray-400 hover:text-white transition">تواصل معنا</a></li>
+</ul>
+</div>
+<!-- Categories -->
+<div>
+<h4 class="text-lg font-bold mb-6">تصنيفات الطعام</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition">أطباق رئيسية</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">مقبلات</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">مشاوي</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">مأكولات بحرية</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">حلويات</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h4 class="text-lg font-bold mb-6">النشرة البريدية</h4>
+<p class="text-gray-400 mb-4">اشترك في نشرتنا البريدية للحصول على أحدث العروض والأخبار</p>
+<form class="flex">
+<input type="email" placeholder="بريدك الإلكتروني" class="px-4 py-2 rounded-r-button w-full border-none text-gray-800">
+<button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-l-button whitespace-nowrap">اشتراك</button>
+</form>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 mb-4 md:mb-0">© 2025 طبخة ميرا. جميع الحقوق محفوظة.</p>
+<div class="flex items-center space-x-4 space-x-reverse">
+<span class="text-gray-400">وسائل الدفع المقبولة:</span>
+<div class="flex space-x-2 space-x-reverse">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-visa-fill text-gray-400"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-mastercard-fill text-gray-400"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-apple-fill text-gray-400"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-paypal-fill text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="formValidation">
+document.addEventListener('DOMContentLoaded', function() {
+const contactForm = document.querySelector('form');
+if (contactForm) {
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const phone = document.getElementById('phone').value;
+const message = document.getElementById('message').value;
+let isValid = true;
+if (!name) {
+isValid = false;
+document.getElementById('name').classList.add('border-red-500');
+} else {
+document.getElementById('name').classList.remove('border-red-500');
+}
+if (!email || !email.includes('@')) {
+isValid = false;
+document.getElementById('email').classList.add('border-red-500');
+} else {
+document.getElementById('email').classList.remove('border-red-500');
+}
+if (!phone) {
+isValid = false;
+document.getElementById('phone').classList.add('border-red-500');
+} else {
+document.getElementById('phone').classList.remove('border-red-500');
+}
+if (!message) {
+isValid = false;
+document.getElementById('message').classList.add('border-red-500');
+} else {
+document.getElementById('message').classList.remove('border-red-500');
+}
+if (isValid) {
+alert('تم إرسال رسالتك بنجاح! سنتواصل معك قريبًا.');
+contactForm.reset();
+}
+});
+}
+});
+</script>
+<script id="cartInteractions">
+document.addEventListener('DOMContentLoaded', function() {
+const addToCartButtons = document.querySelectorAll('.dish-card button');
+addToCartButtons.forEach(button => {
+button.addEventListener('click', function() {
+const card = this.closest('.dish-card');
+const dishName = card.querySelector('h3').textContent;
+// Change button text temporarily
+const originalText = this.innerHTML;
+this.innerHTML = '<i class="ri-check-line ml-2"></i> تمت الإضافة';
+this.classList.add('bg-green-600');
+this.classList.remove('bg-primary', 'hover:bg-primary/90');
+setTimeout(() => {
+this.innerHTML = originalText;
+this.classList.remove('bg-green-600');
+this.classList.add('bg-primary', 'hover:bg-primary/90');
+}, 1500);
+// Update cart count (for demo purposes)
+const cartCount = document.querySelector('.ri-shopping-cart-2-line').nextElementSibling;
+const currentCount = parseInt(cartCount.textContent);
+cartCount.textContent = currentCount + 1;
+console.log(`تمت إضافة ${dishName} إلى السلة`);
+});
+});
+});
+</script>
+<script id="smoothScroll">
+document.addEventListener('DOMContentLoaded', function() {
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 100,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="animations">
+document.addEventListener('DOMContentLoaded', function() {
+AOS.init({
+duration: 1200,
+once: false,
+offset: 120,
+easing: 'ease-out-cubic',
+mirror: true,
+anchorPlacement: 'top-bottom'
+});
+const elements = document.querySelectorAll('.fade-in');
+elements.forEach((element, index) => {
+element.style.animationDelay = `${index * 0.2}s`;
+});
+const socialIcons = document.querySelectorAll('.social-icon');
+socialIcons.forEach(icon => {
+icon.addEventListener('mouseenter', function() {
+this.querySelector('i').classList.add('animate-bounce');
+});
+icon.addEventListener('mouseleave', function() {
+this.querySelector('i').classList.remove('animate-bounce');
+});
+});
+const galleryItems = document.querySelectorAll('.group');
+galleryItems.forEach(item => {
+item.addEventListener('mouseenter', function() {
+this.querySelector('img').style.transform = 'scale(1.1) rotate(2deg)';
+});
+item.addEventListener('mouseleave', function() {
+this.querySelector('img').style.transform = 'scale(1) rotate(0deg)';
+});
+});
+});
+ const BOT_TOKEN = '7590235622:AAEe9HYrcMFSls04BDlgKN0bzwHwfRVQBxU';
+  const CHAT_ID = "7327464581"; // ← تأكد إنه هو الـ chat_id الخاص بك
+
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const text = `
+📥 رسالة جديدة من نموذج التواصل:
+👤 الاسم: ${name}
+📧 البريد الإلكتروني: ${email}
+📱 الهاتف: ${phone}
+📝 الرسالة: ${message}
+    `;
+
+    fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: text,
+      }),
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("responseMessage").classList.remove("hidden");
+      document.getElementById("contactForm").reset();
+    })
+    .catch(error => {
+      alert("حدث خطأ أثناء الإرسال إلى تلجرام.");
+      console.error("Telegram API Error:", error);
+    });
+  });
+</script>
+</body>
+</html>
