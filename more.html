@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طبخة ميرا - طلبك أونلاين</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+        
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #f39c12;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        .new-header {
+            background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') no-repeat center center;
+            background-size: cover;
+            height: 500px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            box-shadow: var(--shadow);
+        }
+        
+        .new-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        }
+        
+        .header-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .header-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .order-now-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .back-btn {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(44, 62, 80, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .order-now-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.6);
+        }
+        
+        .back-btn:hover {
+            background-color: #1a252f;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.6);
+        }
+        
+        /* Shopping Cart */
+        .cart-icon {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background-color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .cart-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--secondary-color);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            left: -400px;
+            width: 400px;
+            height: 100vh;
+            background-color: white;
+            box-shadow: var(--shadow);
+            z-index: 999;
+            transition: all 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .cart-sidebar.active {
+            left: 0;
+        }
+        
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-header h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        .cart-items {
+            margin-bottom: 20px;
+        }
+        
+        .cart-item {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .cart-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-left: 10px;
+        }
+        
+        .cart-item-details {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+        
+        .quantity-btn {
+            background-color: #f0f0f0;
+            border: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .quantity {
+            margin: 0 10px;
+        }
+        
+        .remove-item {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        .cart-total {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            text-align: left;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        
+        .checkout-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Order Form Modal */
+        .order-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .order-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .order-form {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .order-form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-form-header h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: var(--primary-color);
+        }
+        
+        .submit-order-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-order-btn:hover {
+            background-color: #c0392b;
+        }
+        
+        /* Loading Spinner */
+        .spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 10px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Menu Container */
+        .menu-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .menu-item:nth-child(1) { animation-delay: 0.1s; }
+        .menu-item:nth-child(2) { animation-delay: 0.2s; }
+        .menu-item:nth-child(3) { animation-delay: 0.3s; }
+        .menu-item:nth-child(4) { animation-delay: 0.4s; }
+        .menu-item:nth-child(5) { animation-delay: 0.5s; }
+        .menu-item:nth-child(6) { animation-delay: 0.6s; }
+        .menu-item:nth-child(7) { animation-delay: 0.7s; }
+        .menu-item:nth-child(8) { animation-delay: 0.8s; }
+        
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .menu-item-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .menu-item:hover .menu-item-img {
+            transform: scale(1.05);
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+            position: relative;
+        }
+        
+        .menu-item-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .menu-item-price {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+        
+        .ingredients {
+            margin-top: 1rem;
+        }
+        
+        .ingredients h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .ingredients h4 i {
+            margin-left: 0.5rem;
+        }
+        
+        .ingredients-list {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .ingredient-tag {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .ingredient-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .add-to-cart {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(243, 156, 18, 0.3);
+        }
+        
+        .add-to-cart:hover {
+            background-color: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(243, 156, 18, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .new-header {
+                height: 400px;
+            }
+            
+            .header-content h1 {
+                font-size: 3rem;
+            }
+            
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .order-now-btn, .back-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .cart-sidebar {
+                width: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .new-header {
+                height: 350px;
+            }
+            
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content p {
+                font-size: 1.2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cart-sidebar {
+                width: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .new-header {
+                height: 300px;
+            }
+            
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .cart-icon {
+                width: 50px;
+                height: 50px;
+                top: 20px;
+                left: 20px;
+            }
+            
+            .cart-icon i {
+                font-size: 1.5rem;
+            }
+            
+            .cart-count {
+                width: 20px;
+                height: 20px;
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- New Header Section -->
+    <header class="new-header">
+        <div class="header-content">
+            <h1>مطعم طبخة ميرا</h1>
+            <p>تجربة طعام استثنائية تصل إلى باب منزلك</p>
+            <div class="header-buttons">
+                <a href="#menu" class="order-now-btn">تصفح القائمة</a>
+                <button class="back-btn" id="backBtn" onclick="window.location.href='index.html'">العودة</button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Shopping Cart -->
+    <div class="cart-icon" id="cartIcon">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+    
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>عربة التسوق</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-total">
+            المجموع: <span id="cartTotal">0</span> ر.س
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">إتمام عملية الشراء</button>
+    </div>
+    
+    <!-- Order Form Modal -->
+    <div class="order-modal" id="orderModal">
+        <div class="order-form">
+            <div class="order-form-header">
+                <h3>معلومات الطلب</h3>
+                <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="customerForm">
+                <div class="form-group">
+                    <label for="name" class="required-field">الاسم الكامل</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone" class="required-field">رقم الهاتف</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address" class="required-field">العنوان</label>
+                    <textarea id="address" name="address" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="district">الحي/المنطقة</label>
+                    <input type="text" id="district" name="district">
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">ملاحظات إضافية</label>
+                    <textarea id="notes" name="notes"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="payment">طريقة الدفع</label>
+                    <select id="payment" name="payment">
+                        <option value="cash">الدفع نقداً عند الاستلام</option>
+                        <option value="card">الدفع بالبطاقة</option>
+                    </select>
+                </div>
+                
+                <div class="spinner" id="spinner"></div>
+                <button type="submit" class="submit-order-btn" id="submitOrderBtn">إرسال الطلب عبر التلجرام</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Menu Section -->
+    <section class="menu-container" id="menu">
+        <div class="section-title">
+            <h2>قائمة الطعام</h2>
+        </div>
+        
+        <div class="menu-grid" id="menuGrid">
+            <!-- Item 1 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="باستا ألفريدو" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>باستا ألفريدو</span>
+                        <span class="menu-item-price">45 ر.س</span>
+                    </div>
+                    <p>معكرونة كريمية غنية بالجبنة البيضاء مع لمستنا الخاصة</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">معكرونة</li>
+                            <li class="ingredient-tag">كريمة طبخ</li>
+                            <li class="ingredient-tag">زبدة</li>
+                            <li class="ingredient-tag">ثوم</li>
+                            <li class="ingredient-tag">جبنة بارميزان</li>
+                            <li class="ingredient-tag">بقدونس</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="1" data-name="باستا ألفريدو" data-price="45" data-img="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1081&q=80" alt="بيتزا مارجريتا" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>بيتزا مارجريتا</span>
+                        <span class="menu-item-price">55 ر.س</span>
+                    </div>
+                    <p>عجينة رقيقة مع صلصة طماطم طازجة وجبنة موزاريلا ذائبة</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">عجينة بيتزا</li>
+                            <li class="ingredient-tag">صلصة طماطم</li>
+                            <li class="ingredient-tag">جبنة موزاريلا</li>
+                            <li class="ingredient-tag">ريحان طازج</li>
+                            <li class="ingredient-tag">زيت زيتون</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="2" data-name="بيتزا مارجريتا" data-price="55" data-img="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1081&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="سلطة سيزر" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>سلطة سيزر</span>
+                        <span class="menu-item-price">35 ر.س</span>
+                    </div>
+                    <p>خس روماني طازج مع قطع خبز محمص وصلصة سيزر الكلاسيكية</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">خس روماني</li>
+                            <li class="ingredient-tag">قطع خبز محمص</li>
+                            <li class="ingredient-tag">جبنة بارميزان</li>
+                            <li class="ingredient-tag">صلصة سيزر</li>
+                            <li class="ingredient-tag">ليمون</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="3" data-name="سلطة سيزر" data-price="35" data-img="https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="ستيك لحم" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>ستيك لحم</span>
+                        <span class="menu-item-price">85 ر.س</span>
+                    </div>
+                    <p>قطعة لحم بقري مشوية بدرجة كمال مع إضافاتنا السرية</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">لحم بقري</li>
+                            <li class="ingredient-tag">ملح</li>
+                            <li class="ingredient-tag">فلفل أسود</li>
+                            <li class="ingredient-tag">زبدة</li>
+                            <li class="ingredient-tag">ثوم</li>
+                            <li class="ingredient-tag">إكليل الجبل</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="4" data-name="ستيك لحم" data-price="85" data-img="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+            
+            <!-- Item 5 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1071&q=80" alt="برجر لحم" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>برجر لحم</span>
+                        <span class="menu-item-price">40 ر.س</span>
+                    </div>
+                    <p>برجر لحم بقري مع خبز بريوش وجبنة شيدر وخلطة سرية</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">لحم بقري</li>
+                            <li class="ingredient-tag">خبز بريوش</li>
+                            <li class="ingredient-tag">جبنة شيدر</li>
+                            <li class="ingredient-tag">بصل</li>
+                            <li class="ingredient-tag">خس</li>
+                            <li class="ingredient-tag">صلصة خاصة</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="5" data-name="برجر لحم" data-price="40" data-img="https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1071&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+            
+            <!-- Item 6 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="سوشي سلمون" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>سوشي سلمون</span>
+                        <span class="menu-item-price">65 ر.س</span>
+                    </div>
+                    <p>سوشي سلمون طازج مع أرز ياباني ووسابي وصلصة الصويا</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">سلمون طازج</li>
+                            <li class="ingredient-tag">أرز ياباني</li>
+                            <li class="ingredient-tag">أفوكادو</li>
+                            <li class="ingredient-tag">خيار</li>
+                            <li class="ingredient-tag">وسابي</li>
+                            <li class="ingredient-tag">صلصة صويا</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="6" data-name="سوشي سلمون" data-price="65" data-img="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+            
+            <!-- Item 7 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="تشكن برجر" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>تشكن برجر</span>
+                        <span class="menu-item-price">38 ر.س</span>
+                    </div>
+                    <p>برجر دجاج مقرمش مع خبز بريوش وصلصة خاصة</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">صدر دجاج</li>
+                            <li class="ingredient-tag">خبز بريوش</li>
+                            <li class="ingredient-tag">خس</li>
+                            <li class="ingredient-tag">طماطم</li>
+                            <li class="ingredient-tag">مايونيز</li>
+                            <li class="ingredient-tag">صلصة خاصة</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="7" data-name="تشكن برجر" data-price="38" data-img="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="تشكن برجر" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>تشكن برجر</span>
+                        <span class="menu-item-price">38 ر.س</span>
+                    </div>
+                    <p>برجر دجاج مقرمش مع خبز بريوش وصلصة خاصة</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">صدر دجاج</li>
+                            <li class="ingredient-tag">خبز بريوش</li>
+                            <li class="ingredient-tag">خس</li>
+                            <li class="ingredient-tag">طماطم</li>
+                            <li class="ingredient-tag">مايونيز</li>
+                            <li class="ingredient-tag">صلصة خاصة</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="7" data-name="تشكن برجر" data-price="38" data-img="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+            <!-- Item 8 -->
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="سلطة يونانية" class="menu-item-img">
+                <div class="menu-item-content">
+                    <div class="menu-item-title">
+                        <span>سلطة يونانية</span>
+                        <span class="menu-item-price">32 ر.س</span>
+                    </div>
+                    <p>سلطة طازجة مع جبنة فيتا وزيتون وخضار مشكلة</p>
+                    <div class="ingredients">
+                        <h4><i class="fas fa-utensils"></i> المقادير</h4>
+                        <ul class="ingredients-list">
+                            <li class="ingredient-tag">خس</li>
+                            <li class="ingredient-tag">طماطم</li>
+                            <li class="ingredient-tag">خيار</li>
+                            <li class="ingredient-tag">زيتون</li>
+                            <li class="ingredient-tag">جبنة فيتا</li>
+                            <li class="ingredient-tag">صلصة زيت زيتون</li>
+                        </ul>
+                    </div>
+                    <button class="add-to-cart" data-id="8" data-name="سلطة يونانية" data-price="32" data-img="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">أضف إلى السلة</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Telegram Bot Configuration
+        const BOT_TOKEN = '7590235622:AAEe9HYrcMFSls04BDlgKN0bzwHwfRVQBxU';
+        const CHAT_ID = "7327464581";
+        
+        // Shopping Cart Functionality
+        let cart = [];
+        const cartIcon = document.getElementById('cartIcon');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const orderModal = document.getElementById('orderModal');
+        const closeModal = document.getElementById('closeModal');
+        const customerForm = document.getElementById('customerForm');
+        const spinner = document.getElementById('spinner');
+        const submitOrderBtn = document.getElementById('submitOrderBtn');
+        const backBtn = document.getElementById('backBtn');
+        
+        // Back Button Functionality
+        backBtn.addEventListener('click', () => {
+            window.history.back();
+        });
+        
+        // Open/Close Cart
+        cartIcon.addEventListener('click', () => {
+            cartSidebar.classList.add('active');
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+        });
+        
+        // Add to Cart
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const img = button.getAttribute('data-img');
+                
+                // Check if item already exists in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        img,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                showAddedToCart(name);
+            });
+        });
+        
+        // Update Cart
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            let count = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                count += item.quantity;
+                
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}" class="cart-item-img">
+                    <div class="cart-item-details">
+                        <div class="cart-item-title">${item.name}</div>
+                        <div class="cart-item-price">${item.price} ر.س</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn minus" data-id="${item.id}">-</button>
+                            <span class="quantity">${item.quantity}</span>
+                            <button class="quantity-btn plus" data-id="${item.id}">+</button>
+                            <button class="remove-item" data-id="${item.id}"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                `;
+                
+                cartItems.appendChild(cartItemElement);
+            });
+            
+            // Add event listeners to new buttons
+            document.querySelectorAll('.minus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    
+                    if (item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        cart = cart.filter(item => item.id !== id);
+                    }
+                    
+                    updateCart();
+                });
+            });
+            
+            document.querySelectorAll('.plus').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    item.quantity += 1;
+                    updateCart();
+                });
+            });
+            
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    cart = cart.filter(item => item.id !== id);
+                    updateCart();
+                });
+            });
+            
+            cartTotal.textContent = total.toFixed(2);
+            cartCount.textContent = count;
+            
+            // Show/hide cart icon based on items
+            if (count > 0) {
+                cartIcon.style.display = 'flex';
+            } else {
+                cartIcon.style.display = 'none';
+                cartSidebar.classList.remove('active');
+            }
+        }
+        
+        // Show "Added to Cart" notification
+        function showAddedToCart(itemName) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = `
+                <span>تمت إضافة ${itemName} إلى السلة</span>
+            `;
+            
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.left = '50%';
+            notification.style.transform = 'translateX(-50%)';
+            notification.style.backgroundColor = '#4CAF50';
+            notification.style.color = 'white';
+            notification.style.padding = '15px 25px';
+            notification.style.borderRadius = '5px';
+            notification.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+            notification.style.zIndex = '1000';
+            notification.style.animation = 'fadeIn 0.5s, fadeOut 0.5s 2.5s';
+            notification.style.animationFillMode = 'forwards';
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+        
+        // Checkout Button - Show Order Form
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('السلة فارغة، يرجى إضافة بعض العناصر أولاً');
+                return;
+            }
+            
+            cartSidebar.classList.remove('active');
+            orderModal.classList.add('active');
+        });
+        
+        // Close Order Modal
+        closeModal.addEventListener('click', () => {
+            orderModal.classList.remove('active');
+        });
+        
+        // Submit Order Form
+        customerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Show loading spinner
+            spinner.style.display = 'block';
+            submitOrderBtn.disabled = true;
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const district = document.getElementById('district').value;
+            const notes = document.getElementById('notes').value;
+            const payment = document.getElementById('payment').value;
+            
+            // Format the order message
+            let message = `🎉 <b>طلب جديد من موقع طبخة ميرا</b> 🎉\n\n`;
+            message += `👤 <b>الاسم:</b> ${name}\n`;
+            message += `📞 <b>الهاتف:</b> ${phone}\n`;
+            message += `🏠 <b>العنوان:</b> ${address}\n`;
+            if (district) message += `📍 <b>الحي/المنطقة:</b> ${district}\n`;
+            if (notes) message += `📝 <b>ملاحظات:</b> ${notes}\n`;
+            message += `💳 <b>طريقة الدفع:</b> ${payment === 'cash' ? 'نقداً عند الاستلام' : 'بالبطاقة'}\n\n`;
+            
+            message += `<b>تفاصيل الطلب:</b>\n`;
+            let total = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                message += `- ${item.name} - ${item.quantity} × ${item.price} ر.س = ${itemTotal} ر.س\n`;
+            });
+            
+            message += `\n💰 <b>المجموع الكلي:</b> ${total.toFixed(2)} ر.س`;
+            
+            try {
+                // Send message to Telegram bot
+                const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.ok) {
+                    // Reset form and cart
+                    customerForm.reset();
+                    cart = [];
+                    updateCart();
+                    orderModal.classList.remove('active');
+                    
+                    // Show success message
+                    alert('تم إرسال طلبك بنجاح! سيتم التواصل معك قريباً لتأكيد التفاصيل.');
+                } else {
+                    throw new Error(data.description || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error sending message:', error);
+                alert('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.');
+            } finally {
+                // Hide loading spinner
+                spinner.style.display = 'none';
+                submitOrderBtn.disabled = false;
+            }
+        });
+        
+        // Initialize cart
+        updateCart();
+        
+        // Animate menu items on scroll
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        const animateOnScroll = () => {
+            menuItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight - 100) {
+                    item.style.animation = 'fadeInUp 0.8s ease forwards';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
